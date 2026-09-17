@@ -10,3 +10,4 @@ Instructions:
 - To check the staged/unstaged changes: `git status`
 - To commit all staged changes: `git commit`
 - To push committed changes to the remote: `git push`
+- To change your default editor for commit messages to your editor of choice: `git config --global core.editor "code --wait"` (or replace code with webstorm)
