@@ -1,6 +1,35 @@
+
+/*
+Border-box reset
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+a.tablelink {
+    color: black;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
 .tableitem {
     flex : 1;
     min-width:0;
+}
+
+div.tableimage{
+    margin-top: 2%;
+}
+
+img.beveledimg{
+    border-radius: 10px;
+    width: 50%;
+    height: 50%
 }
 
 .clickable-header a {
