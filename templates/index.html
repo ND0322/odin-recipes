@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class = "titlebar">
+        <h1>Recipes</h1>
+
+        <button>Hi</button>
+
+    </div>
+    
+        <table>
+            {% for key, recipe in recipes.items() %}
+            {% if loop.index0 % 3 == 0 %}
+                <tr>
+
+            {%endif%}
+
+            <th class = "clickable-header">
+                <a href="{{ url_for('recipe', name=key) }}" class = "tablelink">
+                    <div class="tableitem">
+                    
+                            <h1>{{recipe.name}}</h1>
+
+                            <div class = "tableimage">
+                                <img src = "static/images/{{recipe.name}}.jpg" class = "beveledimg">
+                            </div>
+                            
+                    </div>
+                </a>
+                
+            </th>
+
+            {% if loop.index0 % 3 == 2 or loop.last %}
+                </tr>
+            {% endif %}
+
+            {%endfor%}
+
+            
+        </table>
+    </div>
+
+    
+    
+</body>
+</html>
+
+

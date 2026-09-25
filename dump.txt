@@ -1,23 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>My Page</h1>
-        <table>
-            <tr>                
+<tr>                
                     <th class = "clickable-header">
-                        <a href = "recipes/lasagna.html" class = "tablelink">
+                        <a href="{{ url_for('recipe', name='lasagna') }}" class = "tablelink">
                             <div class="tableitem">
                                 
                                     <p1>Lasagna</h1>
 
                                     <div class = "tableimage">
-                                        <img src = "images/lasagna.jpg" class = "beveledimg">
+                                        <img src = "static/images/lasagna.jpg" class = "beveledimg">
                                     </div>
                                     
                             </div>
@@ -34,7 +23,7 @@
                             <p1>Carbonara</h1>
 
                             <div class = "tableimage">
-                                <img src = "images/carbonara.jpg" class = "beveledimg">
+                                <img src = "static/images/carbonara.jpg" class = "beveledimg">
                             </div>
                             
                         </div>
@@ -49,19 +38,10 @@
                             <p1>Mac & Cheese</h1>
 
                             <div class = "tableimage">
-                                <img src = "images/mac.jpg" class = "beveledimg">
+                                <img src = "static/images/mac.jpg" class = "beveledimg">
                             </div>
                             
                         </div>
                     </a>
                 </th>
             </tr>
-        </table>
-    </div>
-
-    
-    
-</body>
-</html>
-
-
