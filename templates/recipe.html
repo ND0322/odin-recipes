@@ -12,35 +12,31 @@
 
 <body>
 
-    <h1>{{ name }}</h1>
+    <div class = "layout">
+        <aside class = "sidebar">
 
-    <div style="display: flex; justify-content: flex-start; flex-direction: column;">
+            <a href="http://127.0.0.1:5000/">Home</a>
 
-        <img src="{{ url_for('static', filename='images/' + name + '.jpg') }}"
-             alt="{{ name }}"
-             width="300">
+            <ul>
+                <li><a href="{{ url_for('info', name=name) }}" target = "content-frame">{{name}}</a></li>  
+                <li><a href="{{ url_for('ingredients', name=name) }}" target = "content-frame">Ingredients</a></li>
+                <li><a href="{{ url_for('steps', name=name) }}" target = "content-frame">Steps</a></li>
+            </ul>
 
-        <h2 style="margin-bottom: 0%;">Description</h2>
-        <p>{{description}}</p>
 
-        <h2 style="margin-bottom: 0;">Ingredients</h2>
-        <ul>
-            {% for ingredient in ingredients%}
-            <li>{{ ingredient }}</li>
-            {%endfor%}
-        </ul>
 
-        <h2 style="margin-bottom: 0;">Steps</h2>
-        <ol>
+        </aside>
 
-            {% for step in steps%}
-            <li>{{ step }}</li>
-            {%endfor%}
-        </ol>
+    
 
-        <a href="{{ url_for('home') }}">
-            Home
-        </a>
+        <main class="content">
+            <iframe name="content-frame" src="{{ url_for('info', name=name) }}"></iframe>
+        </main>
+
+        <footer>
+            <p>Author: Nathan Dai</p>
+            <p><a href="mailto:nathan.dai27@stgeorgs.bc.ca">nathan.dai27@stgeorgs.bc.ca</a></p>
+        </footer>
 
     </div>
 

@@ -74,9 +74,22 @@ def home():
 
 @app.route("/recipe/<name>")
 def recipe(name):
-    return render_template(f"recipe.html", name=name, steps = recipes[name]['steps'], ingredients = recipes[name]['ingredients'], description = recipes[name]['description'])
+    return render_template(f"recipe.html", name=name)
 
 
+#steps = recipes[name]['steps'], ingredients = recipes[name]['ingredients'], description = recipes[name]['description']
+
+@app.route("/info/<name>")
+def info(name):
+    return render_template(f"info.html", description=recipes[name]['description'], name = name)
+
+@app.route("/steps/<name>")
+def steps(name):
+    return render_template(f"steps.html", steps = recipes[name]['steps'])
+
+@app.route("/ingredients/<name>")
+def ingredients(name):
+    return render_template(f"ingredients.html", ingredients = recipes[name]['ingredients'])
 
 if __name__ == '__main__':
     app.run(debug=True)
